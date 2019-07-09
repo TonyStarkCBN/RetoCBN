@@ -1,0 +1,43 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="card card-w-title">
+            <h1>Mis Proveedores</h1>
+
+            <p-table #dt1 [columns]="selectedColumns" [value]="provider1" [paginator]="true" [rows]="10" selectionMode="multiple" [(selection)]="selectedColumns" [reorderableColumns]="true"> 
+                    <ng-template pTemplate="caption">
+                        <div style="text-align:left">
+                            <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                                        selectedItemsLabel="{0} columnas seleccionadas" [style]="{minWidth: '200px'}" defaultLabel="Escoger columnas"></p-multiSelect>                                    
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns" pReorderableColumn>
+                                {{col.header}}
+                            </th>
+                        </tr>
+                        <tr>
+                                <th *ngFor="let col of columns" [ngSwitch]="col.field" class="ui-fluid">
+                                    <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, col.filterMatchMode)" [value]="dt1.filters[col.field]?.value">
+                                </th>
+                        </tr>            
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                            <tr>
+                                    <td *ngFor="let col of columns">
+                                        {{rowData[col.field]}}
+                                    </td>
+                                </tr>
+                    </ng-template>
+            </p-table>            
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

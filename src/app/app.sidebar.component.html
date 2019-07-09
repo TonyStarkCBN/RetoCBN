@@ -1,0 +1,318 @@
+<div class="layout-sidebar" [ngStyle]="{'overflow':app.sidebarActive ? 'hidden' : 'visible'}" (click)="app.onSidebarClick($event)">
+        <div class="layout-tabmenu">
+
+
+            <ul class="layout-tabmenu-nav">
+                <li [ngClass]="{'active-item':app.activeTabIndex === 0}">
+                    <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 0)"><i class="fa fa-users"></i></a>
+                    <div class="layout-tabmenu-tooltip">
+                        <div class="layout-tabmenu-tooltip-arrow"></div>
+                        <div class="layout-tabmenu-tooltip-text">PROVEEDOR</div>
+                    </div>
+                </li>
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 1}">
+                        <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 1)"><i class="fa fa-cogs"></i></a>
+                        <div class="layout-tabmenu-tooltip">
+                            <div class="layout-tabmenu-tooltip-arrow"></div>
+                            <div class="layout-tabmenu-tooltip-text">MATERIALES</div>
+                        </div>
+                </li>
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 2}">
+                        <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 2)"><i class="fa fa-wrench"></i></a>
+                        <div class="layout-tabmenu-tooltip">
+                            <div class="layout-tabmenu-tooltip-arrow"></div>
+                            <div class="layout-tabmenu-tooltip-text">SERVICIOS</div>
+                        </div>
+                </li>            
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 3}">
+                    <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 3)"><i class="fa fa-file-text"></i></a>
+                    <div class="layout-tabmenu-tooltip">
+                        <div class="layout-tabmenu-tooltip-arrow"></div>
+                        <div class="layout-tabmenu-tooltip-text">PEDIDOS</div>
+                    </div>
+                </li>                  
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 4}">
+                    <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 4)"><i class="fa fa-handshake-o"></i></a>
+                    <div class="layout-tabmenu-tooltip">
+                        <div class="layout-tabmenu-tooltip-arrow"></div>
+                        <div class="layout-tabmenu-tooltip-text">CONTRATOS</div>
+                    </div>
+                </li>   
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 5}">
+                    <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 5)"><i class="fa fa-gavel"></i></a>
+                    <div class="layout-tabmenu-tooltip">
+                        <div class="layout-tabmenu-tooltip-arrow"></div>
+                        <div class="layout-tabmenu-tooltip-text">SUBASTA</div>
+                    </div>
+                </li>   
+
+                <li [ngClass]="{'active-item':app.activeTabIndex === 6}">
+                    <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 6)"><i class="fa fa-newspaper-o"></i></a>
+                    <div class="layout-tabmenu-tooltip">
+                        <div class="layout-tabmenu-tooltip-arrow"></div>
+                        <div class="layout-tabmenu-tooltip-text">CATÁLOGO</div>
+                    </div>
+                </li>                     
+                
+                <li [ngClass]="{'active-item':app.activeTabIndex === 7}">
+                        <a href="#" class="ripplelink tabmenuitem-link" (click)="app.onTabClick($event, 7)"><i class="fa fa-bar-chart"></i></a>
+                        <div class="layout-tabmenu-tooltip">
+                            <div class="layout-tabmenu-tooltip-arrow"></div>
+                            <div class="layout-tabmenu-tooltip-text">Estadísticas</div>
+                        </div>
+                </li>                 
+
+            </ul>
+
+
+
+
+
+            <div class="layout-tabmenu-contents">
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 0}">
+                    <div class="layout-submenu-title clearfix">
+                        <span>PROVEEDORES</span>
+                    </div>
+                    <app-sidebarTabContent>
+                        <div class="projects-tab">
+                            <ul>
+                                <li class="clearfix">
+                                        <i class="fa fa-id-card"></i>
+                                    <span class="project-title">Proveedores</span>
+                                    <span class="message">Mis proveedores</span>
+                                </li>
+                                <li class="clearfix">
+                                    <i class="fa fa-line-chart"></i>
+                                <span class="project-title">Evaluaciones</span>
+                                <span class="message">Evalua tu proveedor</span>
+                                </li>                                  
+                                <li class="clearfix">
+                                        <i class="fa fa-exclamation-circle"></i>
+                                    <span class="project-title">Reclamos</span>
+                                    <span class="message">Central de reclamos</span>
+                                </li>
+                                  
+                            </ul>
+                        </div>
+                    </app-sidebarTabContent>
+                </div>
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 1}">
+                        <div class="layout-submenu-title clearfix">
+                            <span>MATERIALES</span>
+                        </div>
+                        <app-sidebarTabContent>
+                            <div class="projects-tab">
+                                <ul>
+                                    <li class="clearfix">
+                                            <i class="fa fa-cog"></i>
+                                        <span class="project-title">Materiales</span>
+                                        <span class="message">Panel de materiales</span>
+                                    </li>
+                                    <li class="clearfix">
+                                            <i class="fa fa-pencil-square"></i>
+                                        <span class="project-title">Maestros</span>
+                                        <span class="message">Gestión de materiales</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <i class="fa fa-list-ol"></i>
+                                    <span class="project-title">Lista Precios</span>
+                                    <span class="message">Contrato marco</span>
+                                    </li>                                    
+                                  
+                                </ul>
+                            </div>
+                        </app-sidebarTabContent>
+                </div>
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 2}">
+                        <div class="layout-submenu-title clearfix">
+                            <span>SERVICIOS</span>
+                        </div>
+                        <app-sidebarTabContent>
+                            <div class="projects-tab">
+                                <ul>
+                                    <li class="clearfix">
+                                            <i class="fa fa-wrench"></i>
+                                        <span class="project-title">Servicios</span>
+                                        <span class="message">Panel de servicios</span>
+                                    </li>
+                                    <li class="clearfix">
+                                            <i class="fa fa-pencil-square"></i>
+                                        <span class="project-title">Maestros</span>
+                                        <span class="message">Gestión de servicios</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <i class="fa fa-list-ol"></i>
+                                    <span class="project-title">Lista Precios</span>
+                                    <span class="message">Contrato marco</span>
+                                    </li>                                     
+                                    <li class="clearfix">
+                                        <i class="fa fa-eye"></i>
+                                    <span class="project-title">Seguimiento</span>
+                                    <span class="message">Central de seguimiento</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </app-sidebarTabContent>
+                </div>
+
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 3}">
+                    <div class="layout-submenu-title clearfix">
+                        <span>PEDIDOS</span>
+                    </div>
+                    <app-sidebarTabContent>
+                        <div class="projects-tab">
+                            <ul>
+                                <li class="clearfix">
+                                        <i class="fa fa-folder-open-o"></i>
+                                    <span class="project-title">Cotizaciones</span>
+                                    <span class="message">Gestión cotización</span>
+                                </li>
+                                <li class="clearfix">
+                                        <i class="fa fa-folder-o"></i>
+                                    <span class="project-title">Ordenes de Compra</span>
+                                    <span class="message">Gestión de OC</span>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </app-sidebarTabContent>
+                </div>                
+
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 4}">
+                    <div class="layout-submenu-title clearfix">
+                        <span>CONTRATOS</span>
+                    </div>
+                    <app-sidebarTabContent>
+                        <div class="projects-tab">
+                            <ul>
+                                <li class="clearfix">
+                                        <i class="fa fa-handshake-o"></i>
+                                    <span class="project-title">Contratos</span>
+                                    <span class="message">Generar contratos</span>
+                                </li>
+                                <li class="clearfix">
+                                    <i class="fa fa-eye"></i>
+                                <span class="project-title">Seguimiento</span>
+                                <span class="message">Contratos vigentes</span>
+                                </li>
+                                <li class="clearfix">
+                                    <i class="fa fa-database"></i>
+                                <span class="project-title">Historial</span>
+                                <span class="message">Contratos cerrados</span>
+                                </li>     
+                                <li class="clearfix">
+                                    <i class="fa fa-book"></i>
+                                <span class="project-title">Políticas</span>
+                                <span class="message">Gestión de políticas</span>
+                                </li>                                                             
+
+                            </ul>
+                        </div>
+                    </app-sidebarTabContent>
+                </div> 
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 5}">
+                    <div class="layout-submenu-title clearfix">
+                        <span>SUBASTA</span>
+                    </div>
+                    <app-sidebarTabContent>
+                        <div class="projects-tab">
+                            <ul>
+                                    <li class="clearfix">
+                                            <i class="fa fa-gavel"></i>
+                                            <span class="project-title">Subastas</span>  
+                                            <span class="message">Mis subastas online</span>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="inbox-tab">
+                                <div class="inbox-labels">
+                                    <ul>
+                                        <li class="clearfix">
+                                                <i class="fa fa-circle" style="color:green;"></i><span class="inbox-label">  Abiertas</span>
+                                                <span class="inbox-label-badge-green">20</span>
+                                        </li>
+                                        <li class="clearfix">
+                                                <i class="fa fa-circle" style="color:darkred;"></i><span class="inbox-label">  Concluidas</span>
+                                                <span class="inbox-label-badge-red">43</span>
+                                        </li>                                            
+                                    </ul>
+                                </div>
+                        </div>    
+
+                        <div class="projects-tab">
+                                <ul>
+                                        <li class="clearfix">
+                                                <i class="fa fa-database"></i>
+                                                <span class="project-title">Historial</span>  
+                                                <span class="message">hIstorial de subastas</span>
+                                        </li>
+                                </ul>
+                        </div>
+                           
+
+
+                    </app-sidebarTabContent>
+                </div>                
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 6}">
+                    <div class="layout-submenu-title clearfix">
+                        <span>CATALOGO</span>
+                    </div>
+                    <app-sidebarTabContent>
+                            <div class="projects-tab">
+                                <ul>
+
+                                    <li class="clearfix">
+                                        <i class="fa fa-cog"></i>
+                                        <span class="project-title">Bienes</span>
+                                        <span class="message">Productos físicos</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <i class="fa fa-wrench"></i>
+                                            <span class="project-title">Servicios</span>
+                                            <span class="message">Productos intangibles</span>
+                                        </li>                                    
+                                    <li class="clearfix">
+                                        <i class="fa fa-truck"></i>
+                                        <span class="project-title">Transporte</span>
+                                        <span class="message">Vehiculos y equipos </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                    </app-sidebarTabContent>
+                </div> 
+
+                <div class="layout-tabmenu-content" [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === 7}">
+                        <div class="layout-submenu-title clearfix">
+                            <span>ESTADÍSTCAS</span>
+                        </div>
+                        <app-sidebarTabContent>
+                            <div class="projects-tab">
+                                <ul>
+                                    <li class="clearfix">
+                                            <i class="fa fa-tachometer"></i>
+                                        <span class="project-title">Dashboard</span>
+                                        <span class="message">Mis estadísticas</span>
+                                    </li>  
+                                </ul>
+                            </div>
+                        </app-sidebarTabContent>
+                    </div> 
+
+            </div>
+        </div>
+    </div>

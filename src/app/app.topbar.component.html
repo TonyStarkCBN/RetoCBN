@@ -1,0 +1,234 @@
+<div class="topbar clearfix">
+   <a href="#" id="menu-button" (click)="app.onMenuButtonClick($event,0)">
+        <span class="fa fa-angle-left"></span>
+    </a>
+    <a class="morpheus-logo-link" href="#">
+        <img src="assets/layout/images/CBN.svg" class="morpheus-logo" />
+    </a>
+
+    <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}">
+        <li #messages [ngClass]="{'active-topmenuitem':app.activeTopbarItem === messages}">
+            <a href="#" (click)="app.onTopbarItemClick($event,messages)">
+                <img src="assets/layout/images/bell-o.svg" width="25"/>
+                <span class="topbar-badge">5</span>
+                <span class="topbar-item-name">Messages</span>
+            </a>
+            <ul class="fadeInDown">
+                <li role="menuitem">
+                    <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
+                        <img src="assets/layout/images/avatar1.png" width="35"/>
+                        <span>Actualiza datos</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
+                        <img src="assets/layout/images/avatar2.png" width="35"/>
+                        <span>Actualiza datos</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
+                        <img src="assets/layout/images/avatar3.png" width="35"/>
+                        <span>Actualiza datos</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
+                        <img src="assets/layout/images/avatar2.png" width="35"/>
+                        <span>Actualiza datos</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" class="topbar-message" (click)="app.onTopbarSubItemClick($event)">
+                        <img src="assets/layout/images/avatar4.png" width="35"/>
+                        <span>Actualiza Datos</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li #settings [ngClass]="{'active-topmenuitem':app.activeTopbarItem === settings}">
+            <a href="#" (click)="app.onTopbarItemClick($event,settings)">
+                    <img src="assets/layout/images/info-o.svg" width="25" (click)="display=true"/>
+            </a>
+            <p-dialog header="Tutotial" [(visible)]="display" modal="modal" showEffect="fade" width="500" [autoZIndex]="0">
+                    <video width="470" controls>
+                            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                            
+                          Tu navegador no soporta este formato de video.
+                          </video>
+                    <p-footer>
+                        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                            <button type="button" pButton icon="fa fa-check" (click)="display=false" label="Cerrar"></button>
+                        </div>
+                    </p-footer>
+            </p-dialog>
+
+
+        </li>
+        <li #profile class="profile-item" [ngClass]="{'active-topmenuitem':app.activeTopbarItem === profile}">
+            <a href="#" (click)="app.onTopbarItemClick($event,profile)">
+                <div class="profile-image">
+                        <img src="assets/layout/images/user-o.png" width="25"/>
+                </div>
+                <span class="profile-text">Perfil Empresa</span>
+            </a>
+
+            <p-dialog header="Perfil Empresa" [(visible)]="modalbusinessprofile" modal="modal" showEffect="fade" width="900" [autoZIndex]="0">
+
+                    <div class="ui-g-12 ui-md-12 ui-lg-12">
+                            <div class="user-card">
+                                <div class="user-card-header"></div>
+                                <div class="user-card-content" >
+                                    
+                                        <div class="ui-g-12 ui-md-5 ui-lg-5 ui-fluid contact-form">
+                                                <p-panel header="Logo" [style]="{'minHeight':'220px'}">
+
+
+                                                        <div class="ui-g-12 ui-md-12 ui-lg-12" style="text-align: center;">
+                                                                <img src="https://www.designevo.com/res/templates/thumb_small/bright-blue-kaleidoscope.png" width="120" class="center"><br>
+                                                                <p-fileUpload chooseLabel="Adjuntar logo" mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)"></p-fileUpload>
+                                                        </div>
+
+
+                                                </p-panel>
+                                        </div>
+                                        <div class="ui-g-12 ui-md-7 ui-lg-7 contacts">
+                                                <p-panel header="Redes Sociales" [style]="{'minHeight':'220px','background-color':'#F8F8F8'}">
+
+                                                        <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                <div class="ui-inputgroup">
+                                                                    <span class="ui-inputgroup-addon"><i class="fa fa-globe"></i></span>
+                                                                    <input type="text" pInputText placeholder="Web" style="width: 100%;">
+                                                                </div>
+                                                        </div>
+                                                        
+                                                        <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                <div class="ui-inputgroup">
+                                                                    <span class="ui-inputgroup-addon"><i class="fa fa-linkedin"></i></span>
+                                                                    <input type="text" pInputText placeholder="Linkedin" style="width: 100%;">
+                                                                </div>
+                                                        </div>
+                                                        <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                <div class="ui-inputgroup">
+                                                                    <span class="ui-inputgroup-addon"><i class="fa fa-youtube"></i></span>
+                                                                    <input type="text" pInputText placeholder="Youtube" style="width: 100%;">
+                                                                </div>
+                                                        </div>
+                                                        <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                <div class="ui-inputgroup">
+                                                                    <span class="ui-inputgroup-addon"><i class="fa fa-facebook"></i></span>
+                                                                    <input type="text" pInputText placeholder="Facebook" style="width: 100%;">
+                                                                </div>
+                                                        </div> 
+
+
+                                                </p-panel>
+                                        </div>
+
+
+
+        
+
+                                            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                                                    <p-panel header="Extracto" [style]="{'minHeight':'160px','background-color':'#F8F8F8'}">
+
+                                                            <div class="ui-g">
+                                                                    <textarea [rows]="6" [cols]="70" pInputTextarea ></textarea>
+                                                            </div>
+
+
+                                                    </p-panel>
+                                            </div>
+
+                                            <div class="ui-g-12 ui-md-6 ui-lg-6 contacts">
+                                                    <p-panel header="Valores Corporativos (max 10)" [style]="{'minHeight':'160px','background-color':'#F8F8F8'}">
+    
+                                                            <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                    <span class="ui-float-label">
+                                                                            <p-multiSelect [options]="typeprovider" defaultLabel="Valores" [(ngModel)]="selectedMultiSelectTypeprovider"  [style]="{'width':'100%'}"></p-multiSelect>
+                                                                    </span>   
+                                                            </div>
+    
+                                                            <div class="ui-g-12 ui-md-12 ui-lg-12">
+                                                                <br>
+                                                                    <span class="ui-float-label">
+                                                                        <input id="float-input" type="text" pInputText class="ui-g-12" > 
+                                                                        <label for="float-input" style="color: #b2b2b2; font-size: 13px; margin-top: -0.9em; top: -0.2em"><strong>Otros</strong></label>
+                                                                    </span>   
+                                                            </div>                                                            
+    
+                                                    </p-panel>
+                                            </div>                                    
+
+                                            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                                                    <p-panel header="Misión" [style]="{'minHeight':'90px','background-color':'#F8F8F8'}">
+    
+                                                            <div class="ui-g">
+                                                                    <textarea [rows]="6" [cols]="70" pInputTextarea></textarea>
+                                                            </div>
+    
+    
+                                                    </p-panel>
+                                            </div>                                            
+
+                                            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                                                    <p-panel header="Visión" [style]="{'minHeight':'90px','background-color':'#F8F8F8'}">
+    
+                                                            <div class="ui-g">
+                                                                    <textarea [rows]="6" [cols]="70" pInputTextarea></textarea>
+                                                            </div>
+    
+    
+                                                    </p-panel>
+                                            </div>
+
+                                </div>
+
+                            </div>
+                    </div>
+
+                    <p-footer>
+                        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                            <button type="button" pButton icon="fa fa-check" (click)="modalbusinessprofile=false" label="Guardar"></button>
+                        </div>
+                    </p-footer>
+            </p-dialog>
+
+
+
+
+            
+            <ul class="fadeInDown">
+                <li role="menuitem" (click)="modalbusinessprofile=true">
+                    <a href="#" (click)="app.onTopbarItemClick($event,profile)" >
+                        <i class="fa fa-fw fa-user"></i>
+                        <span>Perfil</span>
+                    </a>
+                    
+                </li>
+                <li role="menuitem">
+                    <a href="https://www.cbntec.com/terminos-y-condiciones" target="_blank">
+                        <i class="fa fa-fw fa-user-secret"></i>
+                        <span>Condiciones</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="https://www.cbntec.com/politica-de-privacidad"  target="_blank">
+                        <i class="fa fa-fw fa-cog"></i>
+                        <span>Privacidad</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-sign-out"></i>
+                        <span>Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
